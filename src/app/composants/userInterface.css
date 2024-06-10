@@ -1,0 +1,244 @@
+:root {
+    --glow-color: rgba(52, 152, 219);
+    --menu-color: #fff;
+  }
+
+/* main {
+    display: flex;
+    width: 100%;
+    height: 100%;
+    position: relative;
+} */
+
+main {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 100%;
+    height: 100%;
+    align-items: center;
+}
+
+a {
+    text-decoration: none;
+    color: inherit; /* Garde la couleur du texte par défaut */
+}
+
+.open-side {
+    position: relative;
+    width: 100%;
+    max-width: 17rem;
+    height: 100vh;
+    background-color: #000000;
+}
+
+/* .welcom {
+    position: absolute;
+    top: 3.2rem;
+    left: 10rem;
+    font-weight: bold;
+    font-size: 3rem;
+    -webkit-user-select: none !important;
+    user-select: none !important;
+    -moz-user-select: none !important;
+  } */
+
+.welcom {
+    position: absolute;
+    top: 8.2rem;
+    /* left: 10rem; */
+    font-weight: bold;
+    font-size: 3rem;
+    -webkit-user-select: none !important;
+    user-select: none !important;
+    -moz-user-select: none !important;
+}
+
+.explain {
+    font-size: 1.5rem;
+}
+
+.welcom:after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 4px;
+    background: linear-gradient(to right, transparent 70%, var(--glow-color) 100%);
+    background-size: 200% 100%;
+    transform-origin: bottom left;
+    animation: 4s borderAnim infinite;
+}
+
+  @keyframes borderAnim {
+    0% {
+      background-position: 0% 0;
+    }
+  
+    100% {
+      background-position: -200% 0;
+    }
+  }
+
+  /* Tools */
+
+nav {
+position: relative;
+width: 15.625rem;
+background-color: #2c2c2db9;
+}
+
+.open-tools {
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+    width: 100%;
+}
+
+.tool-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    cursor: pointer;
+    transition: transform 0.2s;
+}
+
+.tool-item:hover {
+    transform: scale(1.1);
+}
+
+.tool-item span {
+    margin-top: 8px;
+    font-size: 14px;
+    color: var(--menu-color);
+}
+
+.profile-picture {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: max-content;
+}
+
+.profile-picture-img {
+    width: 35%;
+    height: max-content;
+    border-radius: 50%;
+    cursor: pointer;
+}
+
+.profile-picture-svg {
+    width: 42%;
+    height: max-content;
+    cursor: pointer;
+}
+
+/*Button*/
+
+.tally-button {
+    width: 100%;
+    display: inline-block;
+    padding: 10px 20px;
+    font-size: 16px;
+    font-weight: bold;
+    color: #ffffff;
+    background-color: #0077b5;
+    border: none;
+    border-radius: 4px;
+    text-align: center;
+    text-decoration: none;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  .tally-button:hover {
+    background-color: #005582; /* Darker tally blue */
+  }
+  
+  .tally-button:active {
+    background-color: #003f5e; /* Even darker tally blue */
+  }
+  
+  .tally-button:focus {
+    outline: none;
+    box-shadow: 0 0 0 4px rgba(0, 119, 181, 0.3); /* blue shadow */
+  }
+
+  /* End Buttons */
+
+/* Custom margins paddings */
+
+.mt1{
+    margin-top : 1rem;
+}
+
+.mt2{
+    margin-top : 2rem;
+}
+
+/* Mobile Screens */
+@media only screen and (max-width : 700px) {
+
+    main {
+        flex-direction: column;
+    }
+
+    .mt1 {margin-top: inherit;}
+
+    nav {
+        width: 100%;
+        height: 4.5rem;
+    }
+
+    .explain_parent {
+        display: flex;
+        justify-content: center;
+    }
+
+    .explain {
+        font-size: 1.2rem;
+        text-align: justify;
+        width: 90%;
+    }
+
+    .profile-picture {
+        display: flex;
+        flex-direction: inherit;
+        align-items: center;
+        height: 70px;
+        width: 100%;
+        justify-content: space-around;
+    }
+
+    .profile-picture-img {
+        width: 15%;
+    }
+
+    .profile-picture-svg {
+        width: 25%;
+    }
+
+    .open-tools {
+        display: flex;
+        flex-direction: inherit;
+        height: 100vh;
+    }
+
+    .welcom {
+        font-weight: bold;
+        font-size: 2rem;
+        user-select: none;
+        top: 4rem;
+    }
+
+    .welcom:after {
+        content: '';
+        position: absolute;
+        bottom: -0.2rem;
+    }
+
+
+}
+
