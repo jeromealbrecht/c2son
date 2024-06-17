@@ -7,9 +7,9 @@ import UserInterface from './composants/UserInterface'
 const Home = () => {
 
   return (
-    <>
+    <div className='page'>
       <UserInterface/>
-    </>
+    </div>
   );
 };
 
